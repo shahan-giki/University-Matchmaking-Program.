@@ -25,3 +25,78 @@ void getStudentInput();
 void displayMatchingUniversities(string preferredField, int minPercentage, int maxTuition, string preferredLocation); 
 void getValidChoice(int& choice);
 
+// Main Function
+int main() 
+{
+    // Load university data from file
+    loadUniversityData();
+
+    // Show the main menu
+    showMainMenu();
+
+    return 0;
+}
+
+
+// Function to load university data from a file
+void loadUniversityData() 
+{
+    ifstream inputFile("university_data.txt");
+    for (int i = 0; i < MAX_UNIVERSITIES; i++) 
+	{
+        getline(inputFile, universityNames[i]); //getline for strings
+        getline(inputFile, locations[i]);
+        inputFile >> tuitionFees[i];
+        inputFile.ignore();
+        getline(inputFile, majors[i]);
+        inputFile >> admissionStatus[i];
+        inputFile.ignore(); //ignore the newline character
+        inputFile >> minimumPercentages[i];
+		inputFile.ignore();
+
+	}
+
+}
+
+// Main menu function to allow the user to return to the menu after each operation
+void showMainMenu() 
+{
+    int choice;
+    while (true) 
+	{
+        cout << "\nWelcome to the University Matchmaker Program!\n";
+        cout << "1. Input your details to find universities\n";
+        cout << "2. Browse universities\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice (1, 2 or 3): ";
+
+        getValidChoice(choice);  // Validate choice input
+
+        if (choice == 1) 
+		{
+            getStudentInput();
+        } 
+		else if (choice == 2) 
+		{
+            int universityChoice;
+            while (true) 
+			{
+                displayMenu();
+                getValidChoice(universityChoice);  // Validate university choice
+
+                if (universityChoice == 0) break;
+
+                showUniversityDetails(universityChoice - 1);
+            }
+        } 
+		else if (choice == 3) 
+		{
+            cout << "Exiting program.\n";
+            break; // Exit the program
+        } 
+		else 
+		{
+            cout << "Invalid choice, please try again.\n";
+        }
+    }
+}

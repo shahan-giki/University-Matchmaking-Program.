@@ -159,3 +159,26 @@ void getStudentInput()
 	cin >> maxTuition;
 	cin.ignore();
 
+void dispalyMatchingUniversities(preferredField, minPercentage, maxTuition, string preferredLocation)
+{
+	cout << "\n----Matching Univrsities---\n";
+	for ( int i=0 ; i < MAX_UNIVERSITIES; i++)
+	{
+		if(majors[i].find(preferredField)!= string::npos && tuitionFees[i]<=maxTuition
+			&& locations[i]== preferredLocation && 
+			minPercentage >= minimunPercentages[i])
+		{
+			cout << "University: " << universityNames[i]  << endl;
+			cout << "Location: " << locations[i]  << endl;
+			cout << "Tuition Fees " << tuitionFees[i]  << endl;
+			cout << "Majors Offered " << majorsOffered[i]  << endl;
+			cout << "Admission Status: " <<  (admissionStatus[i] ? "Open" : "Closed")  << endl;
+			cout << "Admission Requirement: " << minimumPercentage[i] << "%"  << endl;
+			cout << endl;
+		}
+	}
+}
+
+
+
+

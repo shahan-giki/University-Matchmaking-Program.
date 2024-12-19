@@ -100,3 +100,22 @@ void showMainMenu()
         }
     }
 }
+void displayMenu()
+{
+	cout << "\n ----University Menu -----\n";
+	for (int i=0 ; i < MAX_UNIVERSITIES ; i++)
+	{
+		cout << i+1 << ". " << universityNames[i] << endl;
+	}
+cout << "Enter the number of the university, you want to ecplore or 0 to exit:";
+
+void showUniversityDetails(int index)
+{
+	if(index < 0 || index >= MAX_UNIVERSITIES) return;
+	cout << "\n-- University Details \n";
+	cout << "University: " << universityNames[index]<<endl;
+	cout << "Location: " << location[index]<<endl;
+	cout << "Tuition Fees (Per Smeemster): PKR" tuitionFees[index]<< endl;
+	cout << ";Majors Offered: " << majors[index] << endl;
+	cout << "Admission Status: " << (admissionStatus[index] ? "open" : "closed") << endl;
+	cout << "Admission Requirements: " << minimumPercentages[index]<<"%" endl;

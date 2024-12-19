@@ -180,5 +180,26 @@ void dispalyMatchingUniversities(preferredField, minPercentage, maxTuition, stri
 }
 
 
+void getValidChoice(int& choice) 
+{
+    while (true) 
+	{
+        cin >> choice;
+        if (cin.fail()) 
+		{
+            cin.clear();  // Clear the error flag
+            cin.ignore(10000, '\n');  // Ignore any leftover input
+            cout << "Invalid input. Please enter a valid integer choice: ";
+        } 
+		else 
+		{
+            break;  // Exit the loop if input is valid
+        }
+    }
+}
+
+
+
+
 
 

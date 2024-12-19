@@ -119,3 +119,23 @@ void showUniversityDetails(int index)
 	cout << ";Majors Offered: " << majors[index] << endl;
 	cout << "Admission Status: " << (admissionStatus[index] ? "open" : "closed") << endl;
 	cout << "Admission Requirements: " << minimumPercentages[index]<<"%" endl;
+void getStudentInput()
+{
+	string preferedField, preferredLocation;
+	int minPercentage, maxTuition;
+	cout << "\n--- Preferred field of study ---\n";
+	cout << "Mechanical Engineering\n"
+	     << "Electrical Engineering\n"
+	     << "Civil Engineering\n"
+	     << "Chemical Engineering\n"
+	     << "Material Engineering\n"
+	     << "Software Engineering\n"
+	     << "Computer Engineering\n"
+	     << "Computer Science\n"
+	     << "Artificial Intelligence\n"
+	     << "Data Science\n"
+	     << "Engineering Sciences\n"
+	     << "Management Sciences\n";
+    cout << "Enter your choice: ";
+	cin.ignore();
+	getline(cin,preferedField);

@@ -136,6 +136,26 @@ void getStudentInput()
 	     << "Data Science\n"
 	     << "Engineering Sciences\n"
 	     << "Management Sciences\n";
-    cout << "Enter your choice: ";
+        cout << "Enter your choice: ";
 	cin.ignore();
-	getline(cin,preferedField);
+	getline(cin,preferredField);
+
+	cout << "\n----Preferred Location----\n";
+	cout << "Islamabad\n"
+		<<"Lahore\n"
+		<<"Karachi\n"
+		<<"Peshawar\n"
+		<<"Topi\n"
+		<<"Abbotabad\n";
+	cout << "Enter your choice (Name): ";
+	cin >> preferredLocation;
+	cin.ignore();
+
+	cout << "\nEnter your High School Percentage (Digits only) : ";
+	cina >> minPercentage;
+	cin.ignore();
+
+	cout << "\nEnter your budget for Tuition Fees : PKR";
+	cin >> maxTuition;
+	cin.ignore();
+

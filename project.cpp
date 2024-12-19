@@ -119,9 +119,10 @@ void showUniversityDetails(int index)
 	cout << "Majors Offered: " << majors[index] << endl;
 	cout << "Admission Status: " << (admissionStatus[index] ? "open" : "closed") << endl;
 	cout << "Admission Requirements: " << minimumPercentages[index]<< "%" <<  endl;
+ }
 void getStudentInput()
 {
-	string preferedField, preferredLocation;
+	string preferredField, preferredLocation;
 	int minPercentage, maxTuition;
 	cout << "\n--- Preferred field of study ---\n";
 	cout << "Mechanical Engineering\n"
@@ -158,8 +159,8 @@ void getStudentInput()
 	cout << "\nEnter your budget for Tuition Fees : PKR";
 	cin >> maxTuition;
 	cin.ignore();
-
-void displayMatchingUniversities(preferredField, minPercentage, maxTuition, string preferredLocation)
+}
+void displayMatchingUniversities(string preferredField,int minPercentage,int maxTuition, string preferredLocation)
 {
 	cout << "\n----Matching Univrsities---\n";
 	for ( int i=0 ; i < MAX_UNIVERSITIES; i++)
@@ -173,7 +174,7 @@ void displayMatchingUniversities(preferredField, minPercentage, maxTuition, stri
 			cout << "Tuition Fees " << tuitionFees[i]  << endl;
 			cout << "Majors Offered " << majors[i]  << endl;
 			cout << "Admission Status: " <<  (admissionStatus[i] ? "Open" : "Closed")  << endl;
-			cout << "Admission Requirement: " << minimumPercentage[i] << "%"  << endl;
+			cout << "Admission Requirement: " << minimumPercentages[i] << "%"  << endl;
 			cout << endl;
 		}
 	}

@@ -108,17 +108,17 @@ void displayMenu()
 		cout << i+1 << ". " << universityNames[i] << endl;
 	}
 cout << "Enter the number of the university, you want to ecplore or 0 to exit:";
-
+}
 void showUniversityDetails(int index)
-{
+ {
 	if(index < 0 || index >= MAX_UNIVERSITIES) return;
 	cout << "\n-- University Details \n";
 	cout << "University: " << universityNames[index]<<endl;
-	cout << "Location: " << location[index]<<endl;
-	cout << "Tuition Fees (Per Smeemster): PKR" tuitionFees[index]<< endl;
-	cout << ";Majors Offered: " << majors[index] << endl;
+	cout << "Location: " << locations[index]<<endl;
+	cout << "Tuition Fees (Per Smeemster): PKR" << tuitionFees[index]<< endl;
+	cout << "Majors Offered: " << majors[index] << endl;
 	cout << "Admission Status: " << (admissionStatus[index] ? "open" : "closed") << endl;
-	cout << "Admission Requirements: " << minimumPercentages[index]<<"%" endl;
+	cout << "Admission Requirements: " << minimumPercentages[index]<< "%" <<  endl;
 void getStudentInput()
 {
 	string preferedField, preferredLocation;
@@ -152,26 +152,26 @@ void getStudentInput()
 	cin.ignore();
 
 	cout << "\nEnter your High School Percentage (Digits only) : ";
-	cina >> minPercentage;
+	cin >> minPercentage;
 	cin.ignore();
 
 	cout << "\nEnter your budget for Tuition Fees : PKR";
 	cin >> maxTuition;
 	cin.ignore();
 
-void dispalyMatchingUniversities(preferredField, minPercentage, maxTuition, string preferredLocation)
+void displayMatchingUniversities(preferredField, minPercentage, maxTuition, string preferredLocation)
 {
 	cout << "\n----Matching Univrsities---\n";
 	for ( int i=0 ; i < MAX_UNIVERSITIES; i++)
 	{
 		if(majors[i].find(preferredField)!= string::npos && tuitionFees[i]<=maxTuition
 			&& locations[i]== preferredLocation && 
-			minPercentage >= minimunPercentages[i])
+			minPercentage >= minimumPercentages[i])
 		{
 			cout << "University: " << universityNames[i]  << endl;
 			cout << "Location: " << locations[i]  << endl;
 			cout << "Tuition Fees " << tuitionFees[i]  << endl;
-			cout << "Majors Offered " << majorsOffered[i]  << endl;
+			cout << "Majors Offered " << majors[i]  << endl;
 			cout << "Admission Status: " <<  (admissionStatus[i] ? "Open" : "Closed")  << endl;
 			cout << "Admission Requirement: " << minimumPercentage[i] << "%"  << endl;
 			cout << endl;
